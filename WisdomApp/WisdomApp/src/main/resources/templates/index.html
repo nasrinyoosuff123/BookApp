@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Wisdom Book App</title>
+</head>
+<body>
+	<h1 align=center>List of Books Available</h1>
+	<h3 align=center><a href="new">Add New Book</a></h3>
+	<div align="center">
+	<table border="1" style="padding:10px">
+	<thead>
+		<tr>
+			<th> Book Id </th>
+			<th> Name </th>
+			<th> Language </th>
+			<th> Author </th>
+			<th> ISBN </th>
+			<th> Price</th>
+			<th> Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="book:${listBooks}">
+			<td th:text="${book.id}">Book Id</td>
+			<td th:text="${book.name}">Name</td>
+			<td th:text="${book.lang}">Language</td>
+			<td th:text="${book.author}">Author</td>
+			<td th:text="${book.isbn}">ISBN</td>
+			<td th:text="${book.price}">Price</td>	
+			<td>
+				<a th:href="@{'/edit/'+${book.id}}">Edit</a> 
+				&nbsp; &nbsp; &nbsp;
+				<a th:href="@{'/delete/'+${book.id}}">Delete</a> 
+			</td>		
+		</tr>
+	</tbody>
+	</table>
+	</div>
+</body>
+</html>

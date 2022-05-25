@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Wisdom Book Store</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div align="center">
+	<h1>Edit Book Details</h1>
+	<br>
+	<form action="#" th:action="@{/save}" th:object="${book}" method="post">
+	<table border="0" style=padding:10px>
+		<tr>
+			<td>Book Id:</td>
+			<td><input type="text" th:field="*{id}" readonly="readonly"> </td></tr>
+		<tr>
+		<tr>
+			<td>Book Name:</td>
+			<td><input type="text" th:field="*{name}"> </td></tr>
+		<tr>
+			<td>Language:</td>
+			<td><input type="text" th:field="*{lang}"> </td>
+		</tr>
+		<tr>
+			<td>Author:</td>
+			<td><input type="text" th:field="*{author}"> </td>
+		</tr>
+		<tr>
+			<td>ISBN:</td>
+			<td><input type="text" th:field="*{isbn}"> </td>
+		</tr>
+		<tr>
+			<td>Price:</td>
+			<td><input type="text" th:field="*{price}"> </td>
+		</tr>
+		<tr>
+		<td colspan="2"><button type ="submit">Save</button></td>
+		</tr>
+	</table>
+	</form>
+	</div>
+</body>
+</html>
